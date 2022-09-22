@@ -1,0 +1,59 @@
+CREATE DATABASE teste
+GO
+
+USE teste
+GO
+
+CREATE TABLE Product(
+	id int identity primary key,
+	nome varchar(max)
+);
+
+CREATE TABLE Stock(
+	id int identity primary key,
+	id_product int references Product(id),
+	quantity int
+);
+
+CREATE TABLE Sale(
+	id int identity primary key,
+	id_product int references Product(id),
+	quantity int,
+	value money,
+	date date
+);
+
+CREATE TABLE Log(
+	id int identity primary key,
+	date date,
+	rtable varchar(max),
+	command varchar(max),
+	message varchar(max),
+	severity int
+);
+GO
+
+CREATE TRIGGER  UpdateStock
+ON  Sale
+AFTER UPDATE, INSERT, DELETE
+AS
+BEGIN
+	IF UPDATE(quantity)
+		UPDATE dbo.Stock SET quantity = inserted.quantity FROM inserted WHERE Stock.id_product = inserted.id_product	
+END
+GO
+
+CREATE PROCEDURE RegisterSales
+	@id_product INT, @quantity INT, @value MONEY, @date DATE
+AS
+BEGIN
+	BEGIN TRY
+		INSERT INTO Sale(id_product, quantity, value, date) VALUES (@id_product, @quantity, @value, @date)
+	END TRY
+	BEGIN CATCH
+		INSERT INTO Log(date, rtable, command, message, severity) VALUES(GETDATE(), 'Sale', ERROR_LINE(), ERROR_MESSAGE(), ERROR_SEVERITY())
+		PRINT('Try again later')
+	END CATCH
+END
+GO
+
