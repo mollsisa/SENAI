@@ -6,7 +6,7 @@ GO
 
 CREATE TABLE Product(
 	id int identity primary key,
-	nome varchar(max)
+	name varchar(max)
 );
 
 CREATE TABLE Stock(
@@ -57,3 +57,82 @@ BEGIN
 END
 GO
 
+CREATE PROCEDURE InsertProduct
+	@name VARCHAR(MAX), @quantity INT
+AS
+BEGIN
+	BEGIN TRY
+		INSERT INTO Product(name) VALUES (@name)
+
+		BEGIN TRY
+			DECLARE @Id_Product INT 
+			SET @Id_Product = (SELECT id FROM Product WHERE name = @name)
+
+			INSERT INTO Stock(id_product, quantity) VALUES (@Id_Product, @quantity)
+		END TRY
+
+		BEGIN CATCH
+			INSERT INTO Log(date, rtable, command, message, severity) VALUES(GETDATE(), 'Stock', ERROR_LINE(), ERROR_MESSAGE(), ERROR_SEVERITY())
+			PRINT('Error on table Stock! Try again later')
+		END CATCH
+	END TRY
+
+	BEGIN CATCH
+		INSERT INTO Log(date, rtable, command, message, severity) VALUES(GETDATE(), 'Product', ERROR_LINE(), ERROR_MESSAGE(), ERROR_SEVERITY())
+		PRINT('Error on table Product! Try again later')
+	END CATCH
+END
+GO
+
+CREATE PROCEDURE UpdateProduct
+	@name VARCHAR(MAX), @newname VARCHAR(MAX), @quantity INT
+AS
+BEGIN
+	BEGIN TRY
+		UPDATE Product SET name = @newname WHERE name = @name
+
+		BEGIN TRY
+			DECLARE @Id_Product INT 
+			SET @Id_Product = (SELECT id FROM Product WHERE name = @newname)
+
+			UPDATE Stock SET quantity = @quantity WHERE id_product = @Id_Product
+		END TRY
+
+		BEGIN CATCH
+			INSERT INTO Log(date, rtable, command, message, severity) VALUES(GETDATE(), 'Stock', ERROR_LINE(), ERROR_MESSAGE(), ERROR_SEVERITY())
+			PRINT('Error on table Stock! Try again later')
+		END CATCH
+	END TRY
+
+	BEGIN CATCH
+		INSERT INTO Log(date, rtable, command, message, severity) VALUES(GETDATE(), 'Product', ERROR_LINE(), ERROR_MESSAGE(), ERROR_SEVERITY())
+		PRINT('Error on table Product! Try again later')
+	END CATCH
+END
+GO
+
+CREATE PROCEDURE DeleteProduct
+	@name VARCHAR(MAX)
+AS
+BEGIN
+	BEGIN TRY
+		DECLARE @Id_Product INT 
+		SET @Id_Product = (SELECT id FROM Product WHERE name = @name)
+		DELETE FROM Stock WHERE id_product = @Id_Product
+
+		BEGIN TRY
+			DELETE FROM Product WHERE name = @name			
+		END TRY
+
+		BEGIN CATCH
+			INSERT INTO Log(date, rtable, command, message, severity) VALUES(GETDATE(), 'Stock', ERROR_LINE(), ERROR_MESSAGE(), ERROR_SEVERITY())
+			PRINT('Error on table Product! Try again later')
+		END CATCH
+	END TRY
+
+	BEGIN CATCH
+		INSERT INTO Log(date, rtable, command, message, severity) VALUES(GETDATE(), 'Product', ERROR_LINE(), ERROR_MESSAGE(), ERROR_SEVERITY())
+		PRINT('Error on table Stock! Try again later')
+	END CATCH
+END
+GO
