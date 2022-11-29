@@ -1,0 +1,33 @@
+CREATE DATABASE Fabrica
+GO
+USE Fabrica
+GO
+
+CREATE TABLE Automoveis(
+	Id INT IDENTITY PRIMARY KEY,
+	Modelo VARCHAR(100),
+	Preco NUMERIC
+)
+GO
+
+CREATE TABLE Clientes(
+	Id INT IDENTITY PRIMARY KEY,
+	Nome VARCHAR(MAX)
+)
+GO
+
+CREATE TABLE Concessionarias(
+	Id INT IDENTITY PRIMARY KEY,
+	Concessionaria VARCHAR(100)
+)
+GO
+
+CREATE TABLE Alocacao(
+	Id INT IDENTITY PRIMARY KEY,
+	Area INT,
+	Quantidade INT,
+	Automovel INT FOREIGN KEY REFERENCES Automoveis(Id),
+	Concessionaria INT FOREIGN KEY REFERENCES Concessionarias(Id),
+	Cliente INT FOREIGN KEY REFERENCES Clientes(Id)
+)
+GO
