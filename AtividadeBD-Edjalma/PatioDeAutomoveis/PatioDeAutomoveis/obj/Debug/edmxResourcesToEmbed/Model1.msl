@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="PatioModelStoreContainer" CdmEntityContainer="PatioEntities">
+    <EntitySetMapping Name="alocacao">
+      <EntityTypeMapping TypeName="PatioModel.alocacao">
+        <MappingFragment StoreEntitySet="alocacao">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="area" ColumnName="area" />
+          <ScalarProperty Name="automovel" ColumnName="automovel" />
+          <ScalarProperty Name="concession_ria" ColumnName="concession_ria" />
+          <ScalarProperty Name="quantidade" ColumnName="quantidade" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="automoveis">
+      <EntityTypeMapping TypeName="PatioModel.automoveis">
+        <MappingFragment StoreEntitySet="automoveis">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="modelo" ColumnName="modelo" />
+          <ScalarProperty Name="pre_o" ColumnName="pre_o" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="clientes">
+      <EntityTypeMapping TypeName="PatioModel.clientes">
+        <MappingFragment StoreEntitySet="clientes">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Nome" ColumnName="Nome" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="concessionarias">
+      <EntityTypeMapping TypeName="PatioModel.concessionarias">
+        <MappingFragment StoreEntitySet="concessionarias">
+          <ScalarProperty Name="column1" ColumnName="column1" />
+          <ScalarProperty Name="column2" ColumnName="column2" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="PatioModel.sysdiagrams">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

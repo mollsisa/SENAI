@@ -1,0 +1,16 @@
+C:\Users\Moll\source\repos\PatioDeAutomoveis\PatioDeAutomoveis\bin\Debug\PatioDeAutomoveis.exe.config
+C:\Users\Moll\source\repos\PatioDeAutomoveis\PatioDeAutomoveis\bin\Debug\PatioDeAutomoveis.exe
+C:\Users\Moll\source\repos\PatioDeAutomoveis\PatioDeAutomoveis\bin\Debug\PatioDeAutomoveis.pdb
+C:\Users\Moll\source\repos\PatioDeAutomoveis\PatioDeAutomoveis\bin\Debug\EntityFramework.dll
+C:\Users\Moll\source\repos\PatioDeAutomoveis\PatioDeAutomoveis\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Moll\source\repos\PatioDeAutomoveis\PatioDeAutomoveis\bin\Debug\EntityFramework.xml
+C:\Users\Moll\source\repos\PatioDeAutomoveis\PatioDeAutomoveis\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Moll\source\repos\PatioDeAutomoveis\PatioDeAutomoveis\obj\Debug\PatioDeAutomoveis.csproj.AssemblyReference.cache
+C:\Users\Moll\source\repos\PatioDeAutomoveis\PatioDeAutomoveis\obj\Debug\PatioDeAutomoveis.csproj.SuggestedBindingRedirects.cache
+C:\Users\Moll\source\repos\PatioDeAutomoveis\PatioDeAutomoveis\obj\Debug\PatioDeAutomoveis.Form1.resources
+C:\Users\Moll\source\repos\PatioDeAutomoveis\PatioDeAutomoveis\obj\Debug\PatioDeAutomoveis.Properties.Resources.resources
+C:\Users\Moll\source\repos\PatioDeAutomoveis\PatioDeAutomoveis\obj\Debug\PatioDeAutomoveis.csproj.GenerateResource.cache
+C:\Users\Moll\source\repos\PatioDeAutomoveis\PatioDeAutomoveis\obj\Debug\PatioDeAutomoveis.csproj.CoreCompileInputs.cache
+C:\Users\Moll\source\repos\PatioDeAutomoveis\PatioDeAutomoveis\obj\Debug\PatioDeAutomoveis.csproj.CopyComplete
+C:\Users\Moll\source\repos\PatioDeAutomoveis\PatioDeAutomoveis\obj\Debug\PatioDeAutomoveis.exe
+C:\Users\Moll\source\repos\PatioDeAutomoveis\PatioDeAutomoveis\obj\Debug\PatioDeAutomoveis.pdb

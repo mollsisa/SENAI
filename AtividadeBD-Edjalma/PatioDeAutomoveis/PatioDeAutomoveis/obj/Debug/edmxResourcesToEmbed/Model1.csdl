@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="PatioModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="alocacao">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Byte" Nullable="false" />
+    <Property Name="area" Type="Byte" Nullable="false" />
+    <Property Name="automovel" Type="Byte" Nullable="false" />
+    <Property Name="concession_ria" Type="Byte" Nullable="false" />
+    <Property Name="quantidade" Type="Byte" Nullable="false" />
+  </EntityType>
+  <EntityType Name="automoveis">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Byte" Nullable="false" />
+    <Property Name="modelo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="pre_o" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+  </EntityType>
+  <EntityType Name="clientes">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Byte" Nullable="false" />
+    <Property Name="Nome" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="concessionarias">
+    <Key>
+      <PropertyRef Name="column1" />
+    </Key>
+    <Property Name="column1" Type="Byte" Nullable="false" />
+    <Property Name="column2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityContainer Name="PatioEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="alocacao" EntityType="Self.alocacao" />
+    <EntitySet Name="automoveis" EntityType="Self.automoveis" />
+    <EntitySet Name="clientes" EntityType="Self.clientes" />
+    <EntitySet Name="concessionarias" EntityType="Self.concessionarias" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+  </EntityContainer>
+</Schema>
