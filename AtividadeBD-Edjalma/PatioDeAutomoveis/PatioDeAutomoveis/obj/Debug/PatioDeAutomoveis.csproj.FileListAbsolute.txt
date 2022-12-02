@@ -14,3 +14,5 @@ C:\Users\Moll\source\repos\PatioDeAutomoveis\PatioDeAutomoveis\obj\Debug\PatioDe
 C:\Users\Moll\source\repos\PatioDeAutomoveis\PatioDeAutomoveis\obj\Debug\PatioDeAutomoveis.csproj.CopyComplete
 C:\Users\Moll\source\repos\PatioDeAutomoveis\PatioDeAutomoveis\obj\Debug\PatioDeAutomoveis.exe
 C:\Users\Moll\source\repos\PatioDeAutomoveis\PatioDeAutomoveis\obj\Debug\PatioDeAutomoveis.pdb
+C:\Users\Moll\source\repos\PatioDeAutomoveis\PatioDeAutomoveis\obj\Debug\PatioDeAutomoveis.TelaDetalhes.resources
+C:\Users\Moll\source\repos\PatioDeAutomoveis\PatioDeAutomoveis\obj\Debug\PatioDeAutomoveis.TelaVenda.resources

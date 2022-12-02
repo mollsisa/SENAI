@@ -16,6 +16,14 @@ namespace PatioDeAutomoveis
         {
             InitializeComponent();
             Colorir();
+
+            foreach(Button b in this.Controls)
+            {
+                b.MouseClick += delegate
+                {
+                    Clique(b);
+                };
+            }
         }
 
         public void Colorir()
@@ -24,6 +32,7 @@ namespace PatioDeAutomoveis
 
             var area = patioEntities.alocacao.Select(s => s.area).ToList();
             var quantidade = patioEntities.alocacao.Select(s => s.quantidade).ToList();
+
 
             int i = 0;
             foreach (Control c in this.Controls)
@@ -39,6 +48,12 @@ namespace PatioDeAutomoveis
                 }
                 i++;
             }
+        }
+
+        public void Clique(Button b)
+        {
+            TelaDetalhes telaDetalhes = new TelaDetalhes(b.Text);
+            telaDetalhes.Show();
         }
     }
 }

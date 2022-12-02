@@ -12,9 +12,14 @@ namespace PatioDeAutomoveis
 {
     public partial class TelaDetalhes : Form
     {
-        public TelaDetalhes()
+        public TelaDetalhes(string area)
         {
             InitializeComponent();
+
+            Load += delegate
+            {
+                label1.Text = $"Area {area}"; ;
+            };
         }
     }
 }
